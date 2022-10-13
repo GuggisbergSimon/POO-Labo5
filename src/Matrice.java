@@ -8,10 +8,10 @@ public class Matrice {
         this.m = m;
         this.n = n;
         this.modulo = modulo;
+        values = new int[m][n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                //todo generate randomly
-                //values[i][j] = Math.round(Math.random() * modulo);
+                values[i][j] = (int) Math.round(Math.random() * (modulo - 1));
             }
         }
     }
