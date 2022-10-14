@@ -4,6 +4,21 @@ public class Matrice {
     private int[][] values;
     private final int m, n, modulo;
 
+    public Matrice(int m, int n, int modulo, int val)
+    {
+        this.m = m;
+        this.n = n;
+        this.modulo = modulo;
+        values = new int[m][n];
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                values[i][j] = val;
+            }
+        }
+
+    }
+
     public Matrice(int m, int n, int modulo) {
         this.m = m;
         this.n = n;
@@ -42,5 +57,25 @@ public class Matrice {
             s.append("\n");
         }
         return s.toString();
+    }
+
+    public int getM()
+    {
+        return m;
+    }
+
+    public int getN()
+    {
+        return n;
+    }
+
+    public int getModulo()
+    {
+        return modulo;
+    }
+
+    public int getAt(int i, int j)
+    {
+        return values[i][j];
     }
 }
