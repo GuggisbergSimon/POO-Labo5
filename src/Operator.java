@@ -1,5 +1,3 @@
-import java.lang.reflect.Method;
-
 abstract public class Operator
 {
     abstract public Matrice operate(Matrice a, Matrice b);
@@ -21,7 +19,7 @@ abstract public class Operator
                 if (i < a.getM() && i < b.getM() && j < b.getN() && j < b.getN())
                 {
                     // TODO : lire donné pour les val 0 je sais plus s'il faut faire un truc spécifique
-                    matrice[i][j] = op(a.getAt(i, j), b.getAt(i, j))%a.getModulo();
+                    matrice[i][j] = op(a.at(i, j), b.at(i, j))%a.getModulo();
                 }
                 else
                 {

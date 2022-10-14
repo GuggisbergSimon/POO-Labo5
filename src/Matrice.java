@@ -1,5 +1,3 @@
-import java.util.List;
-
 public class Matrice {
     private int[][] values;
     private final int m, n, modulo;
@@ -16,7 +14,6 @@ public class Matrice {
                 values[i][j] = val;
             }
         }
-
     }
 
     public Matrice(int m, int n, int modulo) {
@@ -74,7 +71,7 @@ public class Matrice {
         return modulo;
     }
 
-    public int getAt(int i, int j)
+    public int at(int i, int j)
     {
         return values[i][j];
     }
