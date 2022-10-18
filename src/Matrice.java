@@ -47,7 +47,7 @@ public class Matrice {
         StringBuilder s = new StringBuilder();
         for (var line: values) {
             for (var val: line) {
-                s.append(val + ",");// TODO: befor the enddate : remove ' + ","'
+                s.append(val);
             }
             s.append("\n");
         }
