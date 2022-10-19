@@ -1,4 +1,4 @@
-package Operator;
+package MatriceLabo5;
 
 public class Matrice {
     private int[][] values;
@@ -46,7 +46,7 @@ public class Matrice {
         this.values = new int[m][this.n];
         for (int i = 0; i < this.m; i++) {
             for (int j = 0; j < this.n; j++) {
-                this.values[i][j] = values[i].length <= j ? 0 : Math.floorMod(values[i][j], modulo);
+                this.values[i][j] = j < values[i].length ? Math.floorMod(values[i][j], modulo) : 0;
             }
         }
     }
