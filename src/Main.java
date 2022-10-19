@@ -1,4 +1,4 @@
-import MatriceLabo5.*;
+import VectorialObject.Matrice;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,7 +10,6 @@ public class Main {
         }
 
         final int MODULO = Integer.parseInt(args[4]);
-        Operator[] operators = {new Plus(), new Minus(), new Mult()};
 
         System.out.println("The modulus is " + MODULO + "\n");
 

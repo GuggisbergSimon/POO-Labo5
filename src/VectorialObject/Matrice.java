@@ -1,10 +1,16 @@
-package MatriceLabo5;
+package VectorialObject;
+
+import MatriceLabo5.Minus;
+import MatriceLabo5.Mult;
+import MatriceLabo5.Operator;
+import MatriceLabo5.Plus;
 
 public class Matrice {
     private int[][] values;
     private final int m, n, modulo;
 
     public Matrice(int modulo, int m, int n) {
+        boolean asNegatif = false;
         if (m <= 0 || n <= 0) {
             throw new RuntimeException("in Matrice(int m, int n, " +
                     "int modulo) : m = " + m + ", n = " + n);
@@ -16,7 +22,8 @@ public class Matrice {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 values[i][j] = (int)
-                        Math.round(Math.random() * (modulo - 1));
+                        Math.round(Math.random() * (Math.abs(modulo) - 1) *
+                                (asNegatif ? Math.pow(-1, Math.round(Math.random())) : 1));
             }
         }
     }
@@ -111,17 +118,15 @@ public class Matrice {
         return new Matrice(a.getModulo(), matrice);
     }
 
-
-    public Matrice plus(Matrice other)
-    {
+    public Matrice plus(Matrice other) {
         return operate(this, other, new Plus());
     }
-    public Matrice minus(Matrice other)
-    {
+
+    public Matrice minus(Matrice other) {
         return operate(this, other, new Minus());
     }
-    public Matrice multiply(Matrice other)
-    {
+
+    public Matrice multiply(Matrice other) {
         return operate(this, other, new Mult());
     }
 }

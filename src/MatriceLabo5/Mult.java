@@ -7,7 +7,7 @@ public class Mult extends Operator {
     }
 
     @Override
-    protected int op(int i, int j) {
+    public int op(int i, int j) {
         return i * j;
     }
 }
