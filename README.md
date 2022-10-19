@@ -10,8 +10,8 @@ Le laboratoire s'est articulé autour de deux classes principales :
     - Mult (multiplication)
 
 La création des matrices se fait de deux manières. Soit de
-manière aléatoire, soit en se basant sur une array existante à deux
-dimensions. Dans le cas où celle-ci ne serait pas régulière, alors
+manière aléatoire, soit en se basant sur un array existante à deux
+dimensions. Dans le cas où celle-ci ne serait pas régulière,
 on la parcoure une première fois pour déterminer la largeur, N,
 maximum, puis on la parcoure une seconde fois pour copier les
 valeurs. Si ces valeurs n'existent pas, car dimensions non

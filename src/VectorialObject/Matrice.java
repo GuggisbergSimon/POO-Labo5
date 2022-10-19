@@ -36,19 +36,18 @@ public class Matrice {
             throw new RuntimeException("in Matrice(int modulo, " +
                     "int[][] values) : m = " + m);
         }
-        int n = values[0].length;
+        int maxN = 0;
+        //Gets the largest n
+        for (int[] value : values) {
+            if (value.length > maxN) {
+                maxN = value.length;
+            }
+        }
+        n = maxN;
         if (n == 0) {
             throw new RuntimeException("in Matrice(int modulo, " +
                     "int[][] values) : n = " + n);
         }
-
-        //Gets the largest n
-        for (int[] value : values) {
-            if (value.length > n) {
-                n = value.length;
-            }
-        }
-        this.n = n;
 
         //Setups the array and fills it with values floorModded
         this.values = new int[m][this.n];
