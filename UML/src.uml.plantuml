@@ -1,0 +1,54 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class Main {
+  + Main(): 
+  + main(String[]): void
+}
+class Matrice {
+  + Matrice(int, int, int): 
+  + Matrice(int, int[][]): 
+  - values: int[][]
+  - n: int
+  - m: int
+  - modulo: int
+  + getM(): int
+  + getModulo(): int
+  + at(int, int): int
+  + toString(): String
+  + getN(): int
+}
+class Operator {
+  ~ Operator(String):
+  - symbole: String
+  # op(int, int): int
+  + getSymbole(): String
+  + operate(Matrice, Matrice): Matrice
+}
+class Minus {
+  + Minus(): 
+  # op(int, int): int
+}
+class Mult {
+  + Mult(): 
+  # op(int, int): int
+}
+class Plus {
+  + Plus(): 
+  # op(int, int): int
+}
+
+Main      -[#595959,dashed]->  Matrice  : "«create»"
+Main      -[#595959,dashed]->  Minus    : "«create»"
+Main      -[#595959,dashed]->  Mult     : "«create»"
+Main      -[#595959,dashed]->  Operator 
+Main      -[#595959,dashed]->  Plus     : "«create»"
+Minus     -[#000082,plain]-^  Operator 
+Mult      -[#000082,plain]-^  Operator 
+Operator  -[#595959,dashed]->  Matrice  : "«create»"
+Operator  -[#595959,dashed]->  Operator 
+Plus      -[#000082,plain]-^  Operator 
+@enduml
