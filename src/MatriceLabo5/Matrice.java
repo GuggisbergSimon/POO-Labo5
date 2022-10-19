@@ -4,10 +4,10 @@ public class Matrice {
     private int[][] values;
     private final int m, n, modulo;
 
-    public Matrice(int m, int n, int modulo) {
-        if (m <= 0 || n <= 0)
-        {
-            throw new RuntimeException("in Matrice(int m, int n, int modulo) : m = " + m + ", n = " + n);
+    public Matrice(int modulo, int m, int n) {
+        if (m <= 0 || n <= 0) {
+            throw new RuntimeException("in Matrice(int m, int n, " +
+                    "int modulo) : m = " + m + ", n = " + n);
         }
         this.m = m;
         this.n = n;
@@ -15,7 +15,8 @@ public class Matrice {
         values = new int[m][n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                values[i][j] = (int) Math.round(Math.random() * (modulo - 1));
+                values[i][j] = (int)
+                        Math.round(Math.random() * (modulo - 1));
             }
         }
     }
@@ -24,14 +25,14 @@ public class Matrice {
         this.values = values;
         this.modulo = modulo;
         m = values.length;
-        if (m <= 0)
-        {
-            throw new RuntimeException("in Matrice(int modulo, int[][] values) : m = " + m);
+        if (m == 0) {
+            throw new RuntimeException("in Matrice(int modulo, " +
+                    "int[][] values) : m = " + m);
         }
         int n = values[0].length;
-        if (n <= 0)
-        {
-            throw new RuntimeException("in Matrice(int modulo, int[][] values) : n = " + n);
+        if (n == 0) {
+            throw new RuntimeException("in Matrice(int modulo, " +
+                    "int[][] values) : n = " + n);
         }
 
         //Gets the largest n
@@ -42,19 +43,20 @@ public class Matrice {
         }
         this.n = n;
 
-        //Setups the array and fills it with values floorMod by modulo and zero if non-conforming lengths
+        //Setups the array and fills it with values floorModded
         this.values = new int[m][this.n];
         for (int i = 0; i < this.m; i++) {
             for (int j = 0; j < this.n; j++) {
-                this.values[i][j] = j < values[i].length ? Math.floorMod(values[i][j], modulo) : 0;
+                this.values[i][j] = j < values[i].length ?
+                        Math.floorMod(values[i][j], modulo) : 0;
             }
         }
     }
 
     public String toString() {
         StringBuilder s = new StringBuilder();
-        for (var line: values) {
-            for (var val: line) {
+        for (var line : values) {
+            for (var val : line) {
                 s.append(val);
             }
             s.append("\n");
@@ -62,23 +64,19 @@ public class Matrice {
         return s.toString();
     }
 
-    public int getM()
-    {
+    public int getM() {
         return m;
     }
 
-    public int getN()
-    {
+    public int getN() {
         return n;
     }
 
-    public int getModulo()
-    {
+    public int getModulo() {
         return modulo;
     }
 
-    public int at(int i, int j)
-    {
+    public int at(int i, int j) {
         return values[i][j];
     }
 }

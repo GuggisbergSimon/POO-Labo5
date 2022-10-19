@@ -1,9 +1,12 @@
 package MatriceLabo5;
 
-public class Minus extends Operator
-{
-    public Minus() { super("-"); }
+public class Minus extends Operator {
+    public Minus() {
+        super("-");
+    }
 
     @Override
-    protected int op(int i, int j) { return i - j; }
+    protected int op(int i, int j) {
+        return i - j;
+    }
 }
