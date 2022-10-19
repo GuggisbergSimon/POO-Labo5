@@ -3,7 +3,7 @@ package MatriceLabo5;
 public class Plus extends Operator {
     @Override
     public String toString() {
-        return "-";
+        return "+";
     }
 
     @Override

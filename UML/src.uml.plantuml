@@ -1,53 +1,47 @@
 @startuml
+
 skinparam classAttributeIconSize 0
 hide circle
 
 !theme plain
 top to bottom direction
-skinparam linetype ortho
+skinparam groupInheritance 2
 
-class Matrice {
-  + Matrice(int, int, int): 
-  + Matrice(int, int[][]): 
-  - values: int[][]
-  - n: int
-  - m: int
-  - modulo: int
-  + getM(): int
-  + getN(): int
-  + getModulo(): int
-  + at(int, int): int
-  + toString(): String
-}
-
-class Main {
-  + Main():
-  + main(String[]): void
-}
-
-class Operator {
-  ~ Operator(String):
-  # op(int, int): int
-  + operate(Matrice, Matrice): Matrice
-}
 class Minus {
-  # op(int, int): int
+  + op(int, int): int
   + toString(): String
 }
 class Mult {
-  # op(int, int): int
+  + op(int, int): int
   + toString(): String
 }
 class Plus {
-  # op(int, int): int
+  + op(int, int): int
   + toString(): String
 }
+class Operator {
+  + op(int, int): int
+}
+class Matrice {
+  + Matrice(int, int, int):
+  + Matrice(int, int[][]):
+  - values: int[][]
+  - m: int
+  - modulo: int
+  - n: int
+  + toString(): String
+  + getM(): int
+  + getN(): int
+  + minus(Matrice): Matrice
+  + getModulo(): int
+  + at(int, int): int
+  - operate(Matrice, Matrice, Operator): Matrice
+  + multiply(Matrice): Matrice
+  + plus(Matrice): Matrice
+}
 
-Main     "1"  -[#595959,dashed]->  "*" Operator : creat >
-Main     "1"  -[#595959,dashed]->  "2" Matrice  : possess >
-
-Operator  ^-[#000082,plain]-    Plus
-Operator  ^-[#000082,plain]-    Minus
-Operator  ^-[#000082,plain]-    Mult
+Operator     <|-[#000082,plain]-  Plus
+Operator     <|-[#000082,plain]-  Minus
+Operator     <|-[#000082,plain]-  Mult
 
 @enduml
