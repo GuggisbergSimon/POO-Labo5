@@ -1,12 +1,6 @@
 package MatriceLabo5;
 
 abstract public class Operator {
-    private final String SYMBOL;
-
-    Operator(String s) {
-        SYMBOL = s;
-    }
-
     public Matrice operate(Matrice a, Matrice b) {
         if (a.getModulo() != b.getModulo()) {
             throw new RuntimeException("Les modulos ne sont pas " +
@@ -32,15 +26,11 @@ abstract public class Operator {
         } catch (Exception e) {
             throw new RuntimeException(e.getCause() +
                     " ::: Exception levée lors de l'utilisation " +
-                    "de '" + getSymbol() + "'.");
+                    "de '" + this + "'.");
         }
 
         return new Matrice(a.getModulo(), matrice);
     }
 
     abstract protected int op(int i, int j);
-
-    public String getSymbol() {
-        return SYMBOL;
-    }
 }

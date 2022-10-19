@@ -1,8 +1,9 @@
 package MatriceLabo5;
 
 public class Mult extends Operator {
-    public Mult() {
-        super("x");
+    @Override
+    public String toString() {
+        return "x";
     }
 
     @Override

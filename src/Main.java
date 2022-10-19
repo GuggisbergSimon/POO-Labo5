@@ -2,8 +2,8 @@ import MatriceLabo5.*;
 
 public class Main {
     public static void main(String[] args) {
-
         final int NBR_ARG = 5;
+
         if (args.length != NBR_ARG) {
             throw new RuntimeException("nombre d'argument de args " +
                     "non valide : " + args.length + ", attendu : " + NBR_ARG);

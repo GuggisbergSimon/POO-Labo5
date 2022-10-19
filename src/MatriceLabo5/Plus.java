@@ -1,8 +1,9 @@
 package MatriceLabo5;
 
 public class Plus extends Operator {
-    public Plus() {
-        super("+");
+    @Override
+    public String toString() {
+        return "-";
     }
 
     @Override

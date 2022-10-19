@@ -1,8 +1,10 @@
 package MatriceLabo5;
 
 public class Minus extends Operator {
-    public Minus() {
-        super("-");
+
+    @Override
+    public String toString() {
+        return "-";
     }
 
     @Override
