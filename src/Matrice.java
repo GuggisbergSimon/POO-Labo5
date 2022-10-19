@@ -1,32 +1,19 @@
-import java.util.List;
-
 public class Matrice {
     private int[][] values;
     private final int m, n, modulo;
 
-    public Matrice(int m, int n, int modulo, int val)
-    {
+    public Matrice(int m, int n, int modulo) {
+        if (m <= 0 || n <= 0)
+        {
+            throw new RuntimeException("in Matrice(int m, int n, int modulo) : m = " + m + ", n = " + n);
+        }
         this.m = m;
         this.n = n;
         this.modulo = modulo;
         values = new int[m][n];
-
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                values[i][j] = val;
-            }
-        }
-
-    }
-
-    public Matrice(int m, int n, int modulo) {
-        this.m = m;
-        this.n = n;
-        this.modulo = modulo;
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                //todo generate randomly
-                //values[i][j] = Math.round(Math.random() * modulo);
+                values[i][j] = (int) Math.round(Math.random() * (modulo - 1));
             }
         }
     }
@@ -35,16 +22,24 @@ public class Matrice {
         this.values = values;
         this.modulo = modulo;
         m = values.length;
-        int tmp = values[0].length;
+        if (m <= 0)
+        {
+            throw new RuntimeException("in Matrice(int modulo, int[][] values) : m = " + m);
+        }
+        int n = values[0].length;
+        if (n <= 0)
+        {
+            throw new RuntimeException("in Matrice(int modulo, int[][] values) : n = " + n);
+        }
         for (int i = 0; i < values.length; i++) {
-            if (values[i].length > tmp) {
-                tmp = values[i].length;
+            if (values[i].length > n) {
+                n = values[i].length;
             }
             for (int j = 0; j < values[i].length; j++) {
                 this.values[i][j] %= modulo;
             }
         }
-        n = tmp;
+        this.n = n;
         //TODO fill the missing values if the array has multiple lengths
     }
 
@@ -74,7 +69,7 @@ public class Matrice {
         return modulo;
     }
 
-    public int getAt(int i, int j)
+    public int at(int i, int j)
     {
         return values[i][j];
     }
