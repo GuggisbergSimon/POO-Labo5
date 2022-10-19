@@ -21,8 +21,8 @@ class Matrice {
   + toString(): String
   + getN(): int
 }
-class MatriceLabo5 {
-  ~ MatriceLabo5(String):
+class Operator {
+  ~ Operator(String):
   - symbole: String
   # op(int, int): int
   + getSymbole(): String
@@ -44,11 +44,11 @@ class Plus {
 Main      -[#595959,dashed]->  Matrice  : "«create»"
 Main      -[#595959,dashed]->  Minus    : "«create»"
 Main      -[#595959,dashed]->  Mult     : "«create»"
-Main      -[#595959,dashed]->  MatriceLabo5
+Main      -[#595959,dashed]->  Operator
 Main      -[#595959,dashed]->  Plus     : "«create»"
-Minus     -[#000082,plain]-^  MatriceLabo5
-Mult      -[#000082,plain]-^  MatriceLabo5
-MatriceLabo5  -[#595959,dashed]->  Matrice  : "«create»"
-MatriceLabo5  -[#595959,dashed]->  MatriceLabo5
-Plus      -[#000082,plain]-^  MatriceLabo5
+Minus     -[#000082,plain]-^  Operator
+Mult      -[#000082,plain]-^  Operator
+Operator  -[#595959,dashed]->  Matrice  : "«create»"
+Operator  -[#595959,dashed]->  Operator
+Plus      -[#000082,plain]-^  Operator
 @enduml
