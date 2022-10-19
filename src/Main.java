@@ -24,9 +24,14 @@ public class Main {
                 Integer.parseInt(args[3]));
         System.out.println(two);
 
-        for (Operator operator : operators) {
-            System.out.println("one " + operator.getSymbol() + " two");
-            System.out.println(operator.operate(one, two));
-        }
+        System.out.println("one + two");
+        System.out.println(one.plus(two));
+
+        System.out.println("one - two");
+        System.out.println(one.minus(two));
+
+        System.out.println("one x two");
+        System.out.println(one.multiply(two));
+
     }
 }

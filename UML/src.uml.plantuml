@@ -6,10 +6,6 @@ hide circle
 top to bottom direction
 skinparam linetype ortho
 
-class Main {
-  + Main(): 
-  + main(String[]): void
-}
 class Matrice {
   + Matrice(int, int, int): 
   + Matrice(int, int[][]): 
@@ -18,29 +14,33 @@ class Matrice {
   - m: int
   - modulo: int
   + getM(): int
+  + getN(): int
   + getModulo(): int
   + at(int, int): int
   + toString(): String
-  + getN(): int
 }
+
+class Main {
+  + Main():
+  + main(String[]): void
+}
+
 class Operator {
   ~ Operator(String):
-  - symbole: String
   # op(int, int): int
-  + getSymbole(): String
   + operate(Matrice, Matrice): Matrice
 }
 class Minus {
-  + Minus(): 
   # op(int, int): int
+  + toString(): String
 }
 class Mult {
-  + Mult(): 
   # op(int, int): int
+  + toString(): String
 }
 class Plus {
-  + Plus(): 
   # op(int, int): int
+  + toString(): String
 }
 
 Main     "1"  -[#595959,dashed]->  "*" Operator : creat >
