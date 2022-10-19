@@ -79,4 +79,49 @@ public class Matrice {
     public int at(int i, int j) {
         return values[i][j];
     }
+
+    private Matrice operate(Matrice a, Matrice b, Operator oper) {
+        if (a.getModulo() != b.getModulo()) {
+            throw new RuntimeException("Les modulos ne sont pas " +
+                    "identiques dans les deux matrices");
+        }
+
+        int m = Math.max(a.getM(), b.getM());
+        int n = Math.max(a.getN(), b.getN());
+
+        int[][] matrice = new int[m][n];
+
+        try {
+            for (int i = 0; i < m; ++i) {
+                for (int j = 0; j < n; ++j) {
+                    int tmpA = i < a.getM() && j < a.getN() ?
+                            a.at(i, j) : 0;
+                    int tmpB = i < b.getM() && j < b.getN() ?
+                            b.at(i, j) : 0;
+                    matrice[i][j] = Math.floorMod(
+                            oper.op(tmpA, tmpB), a.getModulo());
+                }
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e.getCause() +
+                    " ::: Exception levée lors de l'utilisation " +
+                    "de '" + oper.toString() + "'.");
+        }
+
+        return new Matrice(a.getModulo(), matrice);
+    }
+
+
+    public Matrice plus(Matrice other)
+    {
+        return operate(this, other, new Plus());
+    }
+    public Matrice minus(Matrice other)
+    {
+        return operate(this, other, new Minus());
+    }
+    public Matrice multiply(Matrice other)
+    {
+        return operate(this, other, new Mult());
+    }
 }
