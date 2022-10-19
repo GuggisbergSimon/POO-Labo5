@@ -31,23 +31,29 @@ public class Matrice {
         {
             throw new RuntimeException("in Matrice(int modulo, int[][] values) : n = " + n);
         }
-        for (int i = 0; i < values.length; i++) {
-            if (values[i].length > n) {
-                n = values[i].length;
-            }
-            for (int j = 0; j < values[i].length; j++) {
-                this.values[i][j] %= modulo;
+
+        //Gets the largest n
+        for (int[] value : values) {
+            if (value.length > n) {
+                n = value.length;
             }
         }
         this.n = n;
-        //TODO fill the missing values if the array has multiple lengths
+
+        //Setups the array and fills it with values floorMod by modulo and zero if non-conforming lengths
+        this.values = new int[m][this.n];
+        for (int i = 0; i < this.m; i++) {
+            for (int j = 0; j < this.n; j++) {
+                this.values[i][j] = values[i].length <= j ? 0 : Math.floorMod(values[i][j], modulo);
+            }
+        }
     }
 
     public String toString() {
         StringBuilder s = new StringBuilder();
         for (var line: values) {
             for (var val: line) {
-                s.append(val + ",");// TODO: befor the enddate : remove ' + ","'
+                s.append(val);
             }
             s.append("\n");
         }
