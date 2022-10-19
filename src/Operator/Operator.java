@@ -26,7 +26,8 @@ abstract public class Operator {
                 }
             }
         } catch (Exception e) {
-            throw new RuntimeException(e.getCause() + " ::: Exception levée !");
+            throw new RuntimeException(e.getCause() +
+                    " ::: Exception levée lors de l'utilisation de '" + getSymbole() + "'.");
         }
 
         return new Matrice(a.getModulo(), matrice);

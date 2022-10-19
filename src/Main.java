@@ -2,9 +2,19 @@ import Operator.*;
 
 public class Main {
     public static void main(String[] args) {
+
+        if (args.length != 4)
+        {
+            System.out.println("Nombre d'argument de args non valide : " + args.length + ", attendu : 4");
+            args = new String[]{"6", "5", "4", "3"};
+            System.out.println("Les valeurs entrées ont étés modifiés !");
+            // TODO : voir si on doit throw ou pas
+            //throw new RuntimeException("nombre d'argument de args non valide : " + args.length + ", attendu : 4");
+        }
+
         //TODO remove for final
-        args = new String[]{"6", "5", "4", "3"};
-        //TODO : est-ce qu'on doit testé le nombre d'argument de args ? (si c'est impaire on peut pas faire 2 matrices)
+        //args = new String[]{"6", "5", "4", "3"};
+
         Operator operators[] = {new Plus(), new Minus(), new Mult()};
 
         int modulo = 5;
