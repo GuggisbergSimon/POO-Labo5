@@ -1,3 +1,4 @@
+package Operator;
 
 abstract public class Operator {
     private String symbole;
@@ -6,9 +7,7 @@ abstract public class Operator {
         symbole = s;
     }
 
-    abstract public Matrice operate(Matrice a, Matrice b);
-
-    protected Matrice oper(Matrice a, Matrice b) {
+    public Matrice operate(Matrice a, Matrice b) {
         if (a.getModulo() != b.getModulo()) {
             throw new RuntimeException("Les modulos ne sont pas identique dans les deux matrices");
         }
