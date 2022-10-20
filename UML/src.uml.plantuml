@@ -32,12 +32,12 @@ class Matrice {
   + toString(): String
   + getM(): int
   + getN(): int
-  + minus(Matrice): Matrice
   + getModulo(): int
   + at(int, int): int
   - operate(Matrice, Matrice, Operator): Matrice
-  + multiply(Matrice): Matrice
   + plus(Matrice): Matrice
+  + minus(Matrice): Matrice
+  + multiply(Matrice): Matrice
 }
 
 Operator     <|-[#000082,plain]-  Plus
