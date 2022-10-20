@@ -10,10 +10,13 @@ public class Matrice {
     private final int m, n, modulo;
 
     public Matrice(int modulo, int m, int n) {
-        boolean asNegatif = false;
         if (m <= 0 || n <= 0) {
             throw new RuntimeException("in Matrice(int m, int n, " +
                     "int modulo) : m = " + m + ", n = " + n);
+        }
+        if (modulo < 0) {
+            throw new RuntimeException(
+                    "negative modulo : not supported");
         }
         this.m = m;
         this.n = n;
@@ -21,9 +24,8 @@ public class Matrice {
         values = new int[m][n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                values[i][j] = (int)
-                        Math.round(Math.random() * (Math.abs(modulo) - 1) *
-                                (asNegatif ? Math.pow(-1, Math.round(Math.random())) : 1));
+                values[i][j] = (int) Math.round(Math.random() *
+                        (Math.abs(modulo) - 1));
             }
         }
     }
@@ -35,6 +37,10 @@ public class Matrice {
         if (m == 0) {
             throw new RuntimeException("in Matrice(int modulo, " +
                     "int[][] values) : m = " + m);
+        }
+        if (modulo < 0) {
+            throw new RuntimeException(
+                    "negative modulo : not supported");
         }
         int maxN = 0;
         //Gets the largest n
