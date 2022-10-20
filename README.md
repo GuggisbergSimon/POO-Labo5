@@ -20,11 +20,12 @@ comme valeur.
 
 Pour effectuer une opération, il faut passer par une méthode
 d'une matrice (plus, minus et multiply).
-Ces méthodes vont ensuite appeler la méthode correspondante d'Operator
-qui va appeler la méthode op d'Operator, méthode abstraite qui doit
-être redéfinie par chacun de ses héritiers. Cela permet la réutilisation
-du code d'itération sur les matrices en déléguant la tâche des 
-opérations aux héritiers. De cette manière il serait trivial d'ajouter 
-des nouvelles opérations, tel que demandé dans la consigne du
-laboratoire. De plus, nous avons ajouté un opérateur toString pour
-pouvoir imprimer de manière plus commode les opérations effectuées.
+Ces méthodes vont ensuite appeler la méthode privée "operate" en lui 
+passant en parametre l'opérateur du quel on va appeler la méthode 
+op d'Operator, méthode abstraite qui doit être redéfinie par chacun de 
+ses héritiers. Cela permet la réutilisation du code d'itération sur 
+les matrices en déléguant la tâche des opérations aux héritiers. 
+De cette manière il serait trivial d'ajouter des nouvelles opérations, 
+tel que demandé dans la consigne du laboratoire. De plus, nous avons 
+ajouté un opérateur toString pour pouvoir imprimer de manière plus 
+commode les opérations effectuées.
