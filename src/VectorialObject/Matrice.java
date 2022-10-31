@@ -1,9 +1,9 @@
 package VectorialObject;
 
-import MatriceLabo5.Minus;
-import MatriceLabo5.Mult;
-import MatriceLabo5.Operator;
-import MatriceLabo5.Plus;
+import Operator.Minus;
+import Operator.Mult;
+import Operator.Operator;
+import Operator.Plus;
 
 public class Matrice {
     private int[][] values;

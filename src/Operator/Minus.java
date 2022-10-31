@@ -1,13 +1,13 @@
-package MatriceLabo5;
+package Operator;
 
-public class Mult extends Operator {
+public class Minus extends Operator {
     @Override
     public String toString() {
-        return "x";
+        return "-";
     }
 
     @Override
     public int op(int i, int j) {
-        return i * j;
+        return i - j;
     }
 }

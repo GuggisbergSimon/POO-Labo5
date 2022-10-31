@@ -1,4 +1,4 @@
-package MatriceLabo5;
+package Operator;
 
 public class Plus extends Operator {
     @Override
