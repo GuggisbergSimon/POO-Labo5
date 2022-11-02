@@ -32,4 +32,5 @@ trivial d'ajouter des nouvelles opérations, tel que demandé dans la
 consigne du laboratoire. De plus, nous avons ajouté un opérateur
 toString à Operator afin de pouvoir imprimer avec quel opérateur une
 erreur se produit.
+### Diagrame UML 
 ![Schéma UML](UML/diagram_UML.png)
