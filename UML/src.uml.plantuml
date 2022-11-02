@@ -19,7 +19,7 @@ class Plus {
   + op(int, int): int
   + toString(): String
 }
-class Operator {
+abstract class Operator {
   + op(int, int): int
 }
 class Matrice {
