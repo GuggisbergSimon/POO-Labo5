@@ -8,23 +8,23 @@ top to bottom direction
 skinparam groupInheritance 2
 
 class Minus {
-  + op(int, int): int
+  + op(left:int, right:int): int
   + toString(): String
 }
 class Mult {
-  + op(int, int): int
+  + op(left:int, right:int): int
   + toString(): String
 }
 class Plus {
-  + op(int, int): int
+  + op(left:int, right:int): int
   + toString(): String
 }
 abstract class Operator {
-  + op(int, int): int
+  + op(left:int, right:int): int
 }
 class Matrice {
-  + Matrice(int, int, int):
-  + Matrice(int, int[][]):
+  + Matrice(modulo:int, m:int, n:int):
+  + Matrice(modulo:int, matrice:int[][]):
   - values: int[][]
   - m: int
   - modulo: int
@@ -33,11 +33,11 @@ class Matrice {
   + getM(): int
   + getN(): int
   + getModulo(): int
-  + at(int, int): int
-  - operate(Matrice, Matrice, Operator): Matrice
-  + plus(Matrice): Matrice
-  + minus(Matrice): Matrice
-  + multiply(Matrice): Matrice
+  + at(m:int, n:int): int
+  - operate(left:Matrice, right:Matrice, op:Operator): Matrice
+  + plus(right:Matrice): Matrice
+  + minus(right:Matrice): Matrice
+  + multiply(right:Matrice): Matrice
 }
 
 Operator     <|-[#000082,plain]-  Plus
