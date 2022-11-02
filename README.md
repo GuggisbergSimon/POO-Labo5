@@ -1,7 +1,5 @@
-# Rapport Labo 5
-
+### Rapport Labo 5
 Le laboratoire s'est articulé autour de deux classes principales :
-
 - Matrice (classe contenant un tableau à deux dimensions
   représentant la matrice ainsi que la valeur modulo)
 - Operator (classe abstraite)
@@ -32,5 +30,5 @@ trivial d'ajouter des nouvelles opérations, tel que demandé dans la
 consigne du laboratoire. De plus, nous avons ajouté un opérateur
 toString à Operator afin de pouvoir imprimer avec quel opérateur une
 erreur se produit.
-### Diagrame UML 
 ![Schéma UML](UML/diagram_UML.png)
+#### Diagrame UML
